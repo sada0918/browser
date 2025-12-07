@@ -13,7 +13,7 @@ default = ["wasabi"]
 wasabi = ["dep:net_wasabi", "dep:noli"]
 
 [[bin]]
-name = "saba"
+name = "browser"
 path = "src/main.rs"
 required_features = ["wasabi"]
 
