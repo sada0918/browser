@@ -1,5 +1,24 @@
 use alloc::string::String;
 use alloc::vec::Vec;
+use crate::renderer::html::attribute::Attribute
+
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub enum HtmlToken {
+    // 開始タグ
+    StartTag {
+        tag: String,
+        self_closing: bool,
+        attributes: Vec<Attribute>,
+    },
+    // 終了タグ
+    EndTag {
+        tag: String,
+    },
+    // 文字
+    Char(char),
+    // ファイルの終了（End Of File）
+    Eof,
+}
 
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub struct HtmlTokenizer {
